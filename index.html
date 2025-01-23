@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Define a codificação de caracteres para garantir que os caracteres especiais sejam corretamente exibidos -->
+    <meta charset="UTF-8">
+    <!-- Faz com que a página seja responsiva em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Inclui o script da biblioteca 'responsivevoice.js' para utilizar a funcionalidade de voz -->
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
+    <!-- Pré-conecta aos domínios do Google Fonts para otimizar o carregamento das fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Carrega as fontes 'Chakra Petch' e 'Inter' do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Carrega o arquivo de estilos CSS externo (responsável pela aparência visual) -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Título da página que aparece na aba do navegador -->
+    <title>JS Game</title>
+</head>
+
+<body>
+
+    <!-- Contêiner principal que engloba todo o conteúdo do jogo -->
+    <div class="container">
+        <div class="container__conteudo">
+            <!-- Seção que contém as informações e interações do jogo -->
+            <div class="container__informacoes">
+                <div class="container__texto">
+                    <!-- Título do jogo, que será atualizado via JavaScript -->
+                    <h1></h1>
+                    <!-- Parágrafo que exibe instruções ou feedbacks para o jogador, também atualizado via JavaScript -->
+                    <p class="texto__paragrafo"></p>
+                </div>
+                
+                <!-- Campo de entrada onde o jogador digita seu chute (número entre 1 e 10) -->
+                <input type="number" min="1" max="10" class="container__input">
+
+                <!-- Div que contém os botões de interação -->
+                <div class="chute container__botoes">
+                    <!-- Botão para o jogador "chutar" o número, chamando a função JavaScript 'verificarChute' -->
+                    <button onclick="verificarChute()" class="container__botao">Chutar</button>
+                    
+                    <!-- Botão para reiniciar o jogo, inicialmente desabilitado, chama a função 'reiniciarJogo' -->
+                    <button onclick="reiniciarJogo()" id="reiniciar" class="container__botao" disabled>Novo jogo</button>
+                </div>
+            </div>
+
+            <!-- Imagem decorativa de uma pessoa olhando para a esquerda, usada na interface -->
+            <img src="./img/ia.png" alt="Uma pessoa olhando para a esquerda" class="container__imagem-pessoa" />
+        </div>
+    </div>
+
+    <!-- Script externo que contém a lógica do jogo, que será carregado de forma assíncrona -->
+    <script src="app.js" defer></script>
+</body>
+
+</html>

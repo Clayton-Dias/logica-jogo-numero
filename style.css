@@ -1,0 +1,160 @@
+/* Estilos globais para todos os elementos */
+* {
+    box-sizing: border-box;  /* Garante que o tamanho de todos os elementos inclua o padding e a borda */
+    margin: 0;               /* Remove margens padrões */
+    padding: 0;              /* Remove paddings padrões */
+    color: white;            /* Define a cor do texto como branca por padrão */
+}
+
+/* Estilo do corpo da página */
+body {
+    /* Gradiente de fundo da página, com várias transições de cor */
+    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
+    height: 100vh;           /* Define a altura como 100% da altura da tela */
+    display: flex;           /* Usa flexbox para centralizar o conteúdo */
+    align-items: center;     /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+/* Adiciona um fundo de código semi-transparente como uma imagem de fundo */
+body::before {
+    background-image: url("img/code.png");
+    background-repeat: no-repeat; /* Não repete a imagem */
+    background-position: right;   /* Posiciona a imagem à direita */
+    content: "";                  /* Necessário para que o pseudo-elemento seja visível */
+    display: block;               /* Faz o pseudo-elemento se comportar como um bloco */
+    position: absolute;           /* Posiciona o pseudo-elemento em relação ao corpo */
+    width: 100%;                  /* A largura é 100% da tela */
+    height: 100%;                 /* A altura é 100% da tela */
+    opacity: 0.4;                 /* Torna a imagem semi-transparente */
+}
+
+/* Contêiner principal que engloba todo o conteúdo do jogo */
+.container {
+    width: 80%;                     /* Largura do contêiner principal */
+    height: 80%;                    /* Altura do contêiner principal */
+    display: flex;                  /* Flexbox para organizar o conteúdo */
+    align-items: center;            /* Alinha os itens verticalmente */
+    justify-content: space-between; /* Distribui os itens com espaçamento entre eles */
+    border-radius: 24px;            /* Bordas arredondadas */
+    border: 1px solid #1875E8;      /* Borda azul */
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15); /* Sombra para dar profundidade */
+    background-image: url("img/Ruido.png"); /* Adiciona uma imagem de fundo de ruído */
+    background-size: 100% 100%;     /* Redimensiona a imagem de fundo para cobrir todo o contêiner */
+    position: relative;             /* Permite posicionamento absoluto dentro do contêiner */
+}
+
+/* Define o layout do conteúdo dentro do contêiner */
+.container__conteudo {
+    display: flex;                  /* Flexbox para organizar os itens */
+    align-items: center;            /* Alinha os itens verticalmente */
+    position: absolute;             /* Posiciona o conteúdo na parte inferior */
+    bottom: 0;                      /* Fixa o conteúdo no fundo do contêiner */
+}
+
+/* Estilos da seção de informações do jogo */
+.container__informacoes {
+    flex: 1;                         /* Faz com que a seção ocupe o máximo de espaço possível */
+    padding: 3rem;                   /* Adiciona padding ao redor do conteúdo */
+}
+
+/* Estilos do botão */
+.container__botao {
+    border-radius: 16px;             /* Bordas arredondadas */
+    background: #1875E8;             /* Cor de fundo azul */
+    padding: 16px 24px;              /* Padding do botão */
+    width: 100%;                     /* O botão ocupa toda a largura disponível */
+    font-size: 24px;                 /* Tamanho da fonte */
+    font-weight: 700;                /* Peso da fonte */
+    border: none;                    /* Remove a borda padrão */
+    margin-top: 2rem;                /* Espaço acima do botão */
+}
+
+/* Estilos do conteúdo de texto */
+.container__texto {
+    margin: 16px 0 16px 0;           /* Define o espaçamento acima e abaixo do conteúdo */
+}
+
+/* Estilos para texto azul */
+.container__texto-azul {
+    color: #1875E8;                  /* Define a cor do texto como azul */
+}
+
+/* Estilos para o campo de input (onde o jogador digita o chute) */
+.container__input {
+    width: 100%;                     /* O campo ocupa toda a largura disponível */
+    height: 72px;                    /* Define a altura do campo de input */
+    border-radius: 16px;             /* Bordas arredondadas */
+    background-color: #FFF;          /* Cor de fundo branca */
+    border: none;                    /* Remove a borda */
+    color: #1875E8;                  /* Cor do texto azul */
+    padding: 2rem;                   /* Padding interno para o texto */
+    font-size: 24px;                 /* Tamanho da fonte */
+    font-weight: 700;                /* Peso da fonte */
+    font-family: 'Inter', sans-serif; /* Família de fontes */
+}
+
+/* Estilos para os botões dentro do contêiner */
+.container__botoes {
+    display: flex;                   /* Flexbox para organizar os botões */
+    gap: 2em;                        /* Espaçamento entre os botões */
+}
+
+/* Estilos para o título (h1) */
+h1 {
+    font-family: 'Chakra Petch', sans-serif; /* Fonte personalizada */
+    font-size: 72px;                     /* Tamanho da fonte */
+    padding-bottom: 3rem;                /* Espaço abaixo do título */
+}
+
+/* Estilos para parágrafos e botões */
+p,
+button {
+    font-family: 'Inter', sans-serif; /* Fonte personalizada para parágrafos e botões */
+}
+
+/* Estilo para o parágrafo do texto */
+.texto__paragrafo {
+    font-size: 32px;                     /* Tamanho da fonte */
+    font-weight: 400;                    /* Peso da fonte */
+}
+
+/* Estilo para os botões desabilitados */
+button:disabled {
+    background-color: gray;             /* Cor de fundo cinza para botões desabilitados */
+}
+
+/* Estilos responsivos para telas menores que 1250px */
+@media screen and (max-width: 1250px) {
+
+    /* Reduz o tamanho do título */
+    h1 {
+        font-size: 50px;
+    }
+
+    /* Reduz o tamanho da fonte do botão */
+    .container__botao {
+        font-size: 16px;
+    }
+
+    /* Reduz o tamanho da fonte do parágrafo */
+    .texto__paragrafo {
+        font-size: 24px;
+    }
+
+    /* Esconde a imagem da pessoa em telas menores */
+    .container__imagem-pessoa {
+        display: none;
+    }
+
+    /* Altera a disposição do conteúdo, deixando-o em formato de coluna */
+    .container__conteudo {
+        display: block;
+        position: inherit;
+    }
+
+    /* Reduz o padding da seção de informações */
+    .container__informacoes {
+        padding: 1rem;
+    }
+}
